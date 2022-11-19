@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+img {
+  width: 20%;
+}
+
+.IdCard,
+.Greetings,
+.Random {
+  border: 1px solid gray;
+  margin: 16px;
+  padding: 16px;
+  display: flex;
+  gap: 32px;
+}

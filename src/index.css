@@ -18,7 +18,8 @@ img {
 
 .IdCard,
 .Greetings,
-.Random {
+.Random,
+.BoxColor {
   border: 1px solid gray;
   margin: 16px;
   padding: 16px;

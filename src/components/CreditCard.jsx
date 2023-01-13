@@ -1,9 +1,15 @@
+import visaImage from './../assets/images/visa.png';
+import msCardImage from './../assets/images/Mastercard_logo.svg.png';
+
+const normalizeNumber = (value) => {
+  return String(value).padStart(2, '0').slice(-2);
+};
+
+const censorCreditcardNr = (value) => {
+  return `•••• `.repeat(3) + value.slice(-4);
+};
+
 const CreditCard = (props) => {
-  // let numberMinusLastFour = props.number.slice(0, -4);
-  /*
-    {props.number}.replaceAll(numberMinusLastFour, dot)
-    or: every fourth sign a space, first 3 groups of fourth replace with dot
-    */
   return (
     <div
       className="CreditCard"
@@ -18,20 +24,21 @@ const CreditCard = (props) => {
       }}
     >
       <div className="eachCard">
-        <h3 style={{ textAlign: 'right', fontStyle: 'italic' }}>
-          {props.type}
-        </h3>
+        <img
+          src={props.type === 'Visa' ? visaImage : msCardImage}
+          alt="{props.type}"
+        />
 
-        <h1>{props.number}</h1>
+        <h1>{censorCreditcardNr(props.number)}</h1>
 
-        <div style={{ display: 'flex', gap: '32px', padding: '0' }}>
-          <p>
-            Expires {props.expirationMonth}/{props.expirationYear}
-          </p>
-          <p>{props.bank}</p>
+        <div>
+          <span>
+            Expires {normalizeNumber(props.expirationMonth)}/
+            {normalizeNumber(props.expirationYear)} {props.bank}
+          </span>
         </div>
 
-        <p>{props.owner}</p>
+        <span>{props.owner}</span>
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ const IdCard = (props) => {
         </p>
         <p>
           <strong>Birth: </strong>
-          {props.birth.toString()}
+          {props.birth.toDateString()}
         </p>
       </div>
     </div>

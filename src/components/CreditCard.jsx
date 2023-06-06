@@ -12,34 +12,32 @@ const censorCreditcardNr = (value) => {
 const CreditCard = (props) => {
   return (
     <div
-      className="CreditCard"
+      className="eachCard"
       style={{
         backgroundColor: props.bgColor,
         color: props.color,
         borderRadius: '12px',
-        padding: '10px 40px',
+        padding: '20px',
         width: '28%',
-        display: 'flex',
-        justifyContent: 'space-between',
       }}
     >
-      <div className="eachCard">
-        <img
-          src={props.type === 'Visa' ? visaImage : msCardImage}
-          alt="{props.type}"
-        />
+      <img
+        src={props.type === 'Visa' ? visaImage : msCardImage}
+        alt="{props.type}"
+        style={{
+          width: '60px',
+        }}
+      />
 
-        <h1>{censorCreditcardNr(props.number)}</h1>
+      <h1>{censorCreditcardNr(props.number)}</h1>
 
-        <div>
-          <span>
-            Expires {normalizeNumber(props.expirationMonth)}/
-            {normalizeNumber(props.expirationYear)} {props.bank}
-          </span>
-        </div>
-
-        <span>{props.owner}</span>
-      </div>
+      <span>
+        Expires {normalizeNumber(props.expirationMonth)}/
+        {normalizeNumber(props.expirationYear)}
+      </span>
+      <span style={{ margin: '0 20px' }}>{props.bank} </span>
+      <br></br>
+      {props.owner}
     </div>
   );
 };

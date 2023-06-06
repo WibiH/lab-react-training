@@ -6,6 +6,7 @@ import CreditCard from './components/CreditCard';
 import Rating from './components/Rating';
 import DriverCard from './components/DriverCard';
 import LikeButton from './components/LikeButton';
+import ClickablePicture from './components/ClickablePicture';
 
 function App() {
   return (
@@ -46,37 +47,38 @@ function App() {
       {/* missing: hex-colors */}
 
       <h1>#5 CreditCard</h1>
-      <CreditCard
-        type="Visa"
-        number="0123456789018845"
-        expirationMonth={3}
-        expirationYear={2021}
-        bank="BNP"
-        owner="Maxence Bouret"
-        bgColor="#11aa99"
-        color="white"
-      />
-      <CreditCard
-        type="Master Card"
-        number="0123456789010995"
-        expirationMonth={3}
-        expirationYear={2021}
-        bank="N26"
-        owner="Maxence Bouret"
-        bgColor="#eeeeee"
-        color="#222222"
-      />
-      <CreditCard
-        type="Visa"
-        number="0123456789016984"
-        expirationMonth={12}
-        expirationYear={2019}
-        bank="Name of the Bank"
-        owner="Firstname Lastname"
-        bgColor="#ddbb55"
-        color="white"
-      />
-
+      <div className="allCreditCards">
+        <CreditCard
+          type="Visa"
+          number="0123456789018845"
+          expirationMonth={3}
+          expirationYear={2021}
+          bank="BNP"
+          owner="Maxence Bouret"
+          bgColor="#11aa99"
+          color="white"
+        />
+        <CreditCard
+          type="Master Card"
+          number="0123456789010995"
+          expirationMonth={3}
+          expirationYear={2021}
+          bank="N26"
+          owner="Maxence Bouret"
+          bgColor="#eeeeee"
+          color="#222222"
+        />
+        <CreditCard
+          type="Visa"
+          number="0123456789016984"
+          expirationMonth={12}
+          expirationYear={2019}
+          bank="Name of the Bank"
+          owner="Firstname Lastname"
+          bgColor="#ddbb55"
+          color="white"
+        />
+      </div>
       <h1>#6 Rating</h1>
       <Rating>0</Rating>
       <Rating>1.49</Rating>
@@ -107,6 +109,9 @@ function App() {
       />
       <h1>#8 LikeButton</h1>
       <LikeButton />
+
+      <h1>#9 ClickablePicture</h1>
+      <ClickablePicture img="maxence.png" imgClicked="maxence-glasses.png" />
     </div>
   );
 }

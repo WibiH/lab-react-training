@@ -20,7 +20,12 @@ const DriverCard = (props) => {
         <img
           src={props.img}
           alt={props.name}
-          style={{ height: '100px', borderRadius: '50%' }}
+          style={{
+            height: '100px',
+            width: '100px',
+            borderRadius: '50%',
+            objectFit: 'cover',
+          }}
         />
       </div>
       <div>

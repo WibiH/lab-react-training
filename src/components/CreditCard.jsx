@@ -36,8 +36,8 @@ const CreditCard = (props) => {
         {normalizeNumber(props.expirationYear)}
       </span>
       <span style={{ margin: '0 20px' }}>{props.bank} </span>
-      <br></br>
-      {props.owner}
+      <br />
+      <span> {props.owner}</span>
     </div>
   );
 };

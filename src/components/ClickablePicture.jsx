@@ -10,7 +10,7 @@ const ClickablePicture = (props) => {
   };
 
   return (
-    <div className="clickablePicture" style={{}}>
+    <div className="clickablePicture">
       <img
         src={image}
         alt={image}
